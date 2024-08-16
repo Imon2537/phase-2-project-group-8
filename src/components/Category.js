@@ -1,6 +1,5 @@
 import React from 'react';
 import Genre from './Genre';
-import Sidebar from './Sidebar';
 
 const Category = () => {
   const genres = [
@@ -35,7 +34,6 @@ const Category = () => {
 
   return (
     <div style={styles.container}>
-      <Sidebar />
       <div style={styles.mainContent}>
         <h1>genre</h1>
         {genres.map((genre) => (
@@ -53,7 +51,7 @@ const styles = {
   mainContent: {
     flex: 1,
     padding: '20px',
-    backgroundColor: '#fde6a2',
+    backgroundColor: 'white',
   },
 };
 
