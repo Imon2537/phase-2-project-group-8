@@ -1,26 +1,18 @@
-// Modify BookCard component to accept a link
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const BookCard = ({ title, author, image }) => {
   return (
-    <Link to={`/book/${title}`} style={styles.link}>
-      <div style={styles.card}>
-        <img src={image} alt={title} style={styles.image} />
-        <div style={styles.info}>
-          <h3 style={styles.title}>{title}</h3>
-          <p style={styles.author}>{author}</p>
-        </div>
+    <div style={styles.card}>
+      <img src={image} alt={title} style={styles.image} />
+      <div style={styles.info}>
+        <h3 style={styles.title}>{title}</h3>
+        <p style={styles.author}>{author}</p>
       </div>
-    </Link>
+    </div>
   );
 };
 
 const styles = {
-  link: {
-    textDecoration: 'none',
-    color: 'inherit',
-  },
   card: {
     display: 'flex',
     alignItems: 'center',
@@ -28,15 +20,16 @@ const styles = {
     padding: '10px',
     borderRadius: '30px',
     backgroundColor: 'rgba(249, 249, 249, 0.3)',
-    maxWidth: '100%',
-    boxSizing: 'border-box',
-    overflow: 'hidden',
+    maxWidth: '100%', // Ensure the container doesn't exceed the viewport width
+    boxSizing: 'border-box', // Include padding and border in width/height
+    overflow: 'hidden', // Prevent content overflow
+
   },
   image: {
-    width: '150px',
-    height: 'auto',
-    marginRight: '20px',
-    flexShrink: 0,
+    width: '150px', // Fixed width for the image
+    height: 'auto', // Maintain aspect ratio
+    marginRight: '20px', // Space between image and details
+    flexShrink: 0, // Prevent image from shrinking
   },
   info: {
     flex: 1,
@@ -45,11 +38,12 @@ const styles = {
     fontSize: '14px',
     fontWeight: 'bold',
     margin: '0',
+
   },
   author: {
     fontSize: '12px',
     color: '#555',
-    marginTop: '5px',
+    marginTop: '5px'
   },
 };
 
