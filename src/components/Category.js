@@ -8,7 +8,8 @@ const Category = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch('https://potterapi-fedeperin.vercel.app/en/books');
+        const apiKey = 'your_nytimes_api_key';
+        const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${genre}.json?api-key=${apiKey}`);
         const data = await response.json();
         
         // Group books by genre
