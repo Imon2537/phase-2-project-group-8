@@ -8,8 +8,7 @@ const Category = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const apiKey = 'your_nytimes_api_key';
-        const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${genre}.json?api-key=${apiKey}`);
+        const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json`);
         const data = await response.json();
         
         // Group books by genre
